@@ -1,11 +1,17 @@
 # Import necessary packages
 import keras
+import argparse
+
 from keras.datasets import mnist
 from keras.models import Sequential, Model
 from keras.layers import Input, Dense, Dropout, Flatten, concatenate
 from keras.layers import Conv2D, MaxPooling2D
 from keras import backend as K
 
+
+ap = argparse.ArgumentParser()
+ap.add_argument("-m", "--model", required=True, help="path to output model")
+args = vars(ap.parse_args())
 
 batch_size = 128
 num_classes = 10
@@ -82,4 +88,4 @@ score = model.evaluate(x_test, y_test, verbose=0)
 print('Test loss:', score[0])
 print('Test accuracy:', score[1])
 
-model.save('output/mnist_nn_1.hdf5')
+model.save(args["model"])

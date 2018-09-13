@@ -13,7 +13,7 @@ The repo contains two python executables.
 2. And from the root directory simply execute the python file. This will create the trained model in *.hdf5 format
 
 ```sh
-$ python3 simple_deep_conv.py
+$ python3 simple_deep_conv.py -m simple_deep_conv.hdf5
 ```
 
 # Inferencing on Raw Input Image:
